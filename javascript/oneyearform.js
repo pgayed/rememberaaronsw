@@ -35,6 +35,7 @@ function GetFormInputs(){
     }
     var content = '---\nauthor: ' + name + '\ntitle: "' + title + '"\ndate: ' + timestamp + '\ntype: post\nlayout: default\nlink: '+link+'\n---\n'+message;
     title = title.replace(/\s+/g, '-');
+    title = title.replace(/"/g, '');
     writeToRepo('oneyearlater/_posts/'+ timestamp +'-'+ title+'.md', content, 'New one year message from '+name+' @ '+ timestamp+'[message]', 'utf-8');
     alert("Thank you. Your message will be displayed shortly.");
 }
